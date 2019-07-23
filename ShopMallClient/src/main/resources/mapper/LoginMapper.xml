@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shoping.dao.LoginDao" >
+
+
+<resultMap id ="BaseResultMap" type="com.shoping.entity.UserCustomer">
+	<id column="id" property="id" jdbcType="VARCHAR" />
+</resultMap>
+
+<select id ="checking" resultMap="BaseResultMap" parameterType="String">select * from user_customer where account=#{user.account} and password=#{user.password}</select>
+</mapper>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>登陆页面</title>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="/css/common.css" />
+</head>
+<body>
+	<form th:action="@{/regist}" method="post">
+		<div>
+			<input id="account" name="account" type="text" placeholder="用户名"></input>
+		</div>
+		<br/>
+		<div>
+			<input id="password" name="password" type="text" placeholder="密码"></input>
+		</div>
+		<br/>
+		<button type="submit" >登 录</button>
+	</form>
+</body>
+</html>

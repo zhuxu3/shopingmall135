@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shoping.dao.OrderDao" >
+
+
+<resultMap id ="BaseResultMap" type="com.shoping.entity.Order">
+	<id column="order_id" property="orderId" jdbcType="VARCHAR" />
+	<id column="goods_id" property="goodsId" jdbcType="VARCHAR" />
+	<id column="account" property="account" jdbcType="VARCHAR" />
+	<id column="address" property="address" jdbcType="VARCHAR" />
+	<id column="order_status" property="orderStatus" jdbcType="VARCHAR" />
+	<id column="distributor_id" property="distributorId" jdbcType="VARCHAR" />
+	<id column="logistics_status" property="logisticsStatus" jdbcType="VARCHAR" />
+	<id column="price" property="price" jdbcType="DECIMAL" />
+</resultMap>
+<insert id ="addOrder" parameterType="com.shoping.entity.Order">insert into `orderTable` (`order_id`, `goods_id`, `account`, `address`, `order_status`, `distributor_id`, `price`) 
+			values  (#{orderId},#{goodsId},#{account},#{address},#{orderStatus},#{distributorId},#{price})</insert>
+
+<select id="findOrderByAccount" resultMap="BaseResultMap" parameterType="String">select * from orderTable where account=#{account}</select>
+
+</mapper>

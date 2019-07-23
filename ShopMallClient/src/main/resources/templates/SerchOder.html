@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="UTF-8">
+<title>选购商品页面</title>
+</head>
+<body>
+	<form action="#" th:action="@{/shopping}" th:object="${Shopping}"
+		method="post">
+		<div>
+			<input type="hidden" th:value="${customer}" id="customer"
+				name="customer" />
+		</div>
+		<table>
+			<tr>
+				<th>编号</th>
+				<th>名称</th>
+				<th>库存</th>
+				<th>类型</th>
+				<th>价格</th>
+			</tr>
+			<tr th:each="goods,var:${goods}">
+				<td th:text="${goods.goodsId}" />
+				<td th:text="${goods.goodsName}" />
+				<td th:text="${goods.stock}" />
+				<td th:text="${goods.goodsType}" />
+				<td th:text="${goods.price}" />
+			</tr>
+		</table>
+		<div>
+			<span>购买商品编号</span> <input id="addGoodsId" name="addGoodsId" />
+		</div>
+		<div>
+			<span>购买数量</span> <input id="addGoodsSum" name="addGoodsSum" />
+		</div>
+		<div>
+			<span>送货地址</span> <input id="address" name="address" />
+		</div>
+		<button type="submit">结算</button>
+	</form>
+	
+	<form action="#" th:action="@{/OrderDetile}"
+		method="post">
+		<div>
+			<input type="hidden" th:value="${customer}" id="customer"
+				name="customer" />
+		</div>
+		<button type="submit">查询订单详情</button>
+	</form>
+</body>
+</html>

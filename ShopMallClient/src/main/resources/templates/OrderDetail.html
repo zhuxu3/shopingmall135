@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>商品页面</title>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>编号</th>
+			<th>送货地址</th>
+			<th>订单状态</th>
+			<th>物流状态</th>
+		</tr>
+		<tr th:each="order,var:${detile}">
+			<td th:text="${order.goodsId}" />
+			<td th:text="${order.address}" />
+			<td th:text="${order.orderStatus}" />
+			<td th:text="${order.logisticsStatus}" />
+		</tr>
+	</table>
+</body>
+</html>
